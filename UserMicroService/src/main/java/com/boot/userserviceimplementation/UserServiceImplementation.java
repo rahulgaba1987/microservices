@@ -71,8 +71,8 @@ public class UserServiceImplementation implements UserService
 //				     
 //				     Hotel hotel = forEntity.getBody();
 				     
-				     Hotel hotel = this.hotelService.getHotel(rating.getHotelId());
-				     rating.setHotel(hotel);
+				     ResponseEntity<Hotel> hotel = this.hotelService.getHotel(rating.getHotelId());
+				     rating.setHotel(hotel.getBody());
 				    // logger.info("Response Status {} "+forEntity.getStatusCode());
 				     logger.info("---Rating {} "+rating.getHotelId());
 				     
